@@ -314,8 +314,7 @@
                         Get in Touch
                     </h2>
                     <div class="section-info">
-                        Lorem ipsum dolor sit amet, ut consul mediocrem abhorreant cum. Id eum dolores.
-                        Delicatissimi ne pri modo accusamus. Augue vitae primis antiopam nec ex rationibus.
+                        If your are a good developer maybe we reach you in Linkedin
                     </div>
                 </div>
             </div>
@@ -333,6 +332,13 @@
                             </div>
                             <div class="col-md-6 form-line">
                                 <div class="form-group">
+                                    <input type="text" class="form-control" id="lastname" name="lastname"
+                                        placeholder="First Name" required data-error="Please enter your last name">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-line">
+                                <div class="form-group">
                                     <input type="email" class="form-control" id="email" name="email" placeholder="Email"
                                         required data-error="Please enter your Email">
                                     <div class="help-block with-errors"></div>
@@ -340,17 +346,20 @@
                             </div>
                             <div class="col-md-12 form-line">
                                 <div class="form-group">
-                                    <input class="form-control" id="company" name="company" placeholder="company"
+                                    <input class="form-control" id="company" name="company" placeholder="Company name"
                                         required data-error="Please enter your company name">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  I agree to receive newsletter
-                                </label>
-                              </div>
+                            <div class="col-md-12">
+                                <div class="form-check" style="    left: 20px;
+                                padding-bottom: 16px;">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      I agree to receive newsletter
+                                    </label>
+                                  </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="form-submit">
                                     <button type="submit" onclick="sendMessage()" class="btn btn-common"
@@ -457,13 +466,14 @@
     <script>
         const sendMessage = () => {
             let name = document.getElementById("name").value;
+            let lastname = document.getElementById("lastname").value;
             let email = document.getElementById("email").value;
             let company = document.getElementById("company").value;
             console.log("name: " + name + " email: " + email + " company: " + company);
 
             // REPLACE WITH REPORTED EVENT DATA
             CDP.report('Add user', {
-                "lastName": "LAST NAME",
+                "lastName": lastname,
                 "company": company,
                 "email": email,
                 "firstName": name
